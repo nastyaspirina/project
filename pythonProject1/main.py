@@ -1,9 +1,39 @@
 import telebot
 from telebot import types
 import os
+import sqlite3
+import sqlite3 as lite
+import sys
 
 token = "1788567444:AAFbRBpRTR7iUdf4qN7X94MnHg0-BI1X8ZI"
 bot = telebot.TeleBot(token)
+
+con = lite.connect('dbpizza.db')
+with con:
+    cur = con.cursor()
+    cur.execute("SELECT * FROM Пиццы")
+    rows = cur.fetchall()
+
+def insert_varible_into_table(user_id, title, size, kolvo):
+    try:
+        sqlite_connection = sqlite3.connect('dbpizza.db')
+        global cursor
+        cursor = sqlite_connection.cursor()
+        print("Подключен к SQLite")
+
+        sqlite_insert_with_param = """INSERT INTO Пиццы
+                              (user_id, title, size, kolvo)
+                              VALUES (?, ?, ?, ?);"""
+
+        data_tuple = (user_id, title, size, kolvo)
+        cursor.execute(sqlite_insert_with_param, data_tuple)
+        sqlite_connection.commit()
+
+        cursor.close()
+
+    except sqlite3.Error as error:
+        print("Ошибка при работе с SQLite", error)
+
 
 menu1 = types.ReplyKeyboardMarkup(resize_keyboard = True)
 item1 = types.KeyboardButton("Заказать пиццу \U0001f355")
@@ -56,7 +86,8 @@ def handle_start(message):
     user_markup = telebot.types.ReplyKeyboardMarkup(True, False)
     user_markup.row("/start")
     bot.send_message(message.chat.id, "Добро пожаловать в пиццерию \U0001F600", reply_markup=menu1)
-
+    global us_id
+    us_id = message.chat.id
 
 @bot.message_handler(func=lambda message:get_state(message) == START)
 def handle_text(message):
@@ -64,7 +95,7 @@ def handle_text(message):
         bot.send_message(message.chat.id, 'Какую пиццу вы предпочитаете?', reply_markup=menu2)
 
     elif message.text == 'Корзина \U0001f5d1':
-        bot.send_message(message.chat.id, text='В корзине: {}'.format(get_corzina(message.chat.id)))
+        bot.send_message(message.chat.id, text='В корзине: {}'.format(rows))
 
     elif message.text == 'Пепперони \U0001f355':
          directory = 'пицца'
@@ -90,6 +121,7 @@ def handle_text(message):
          img.close()
          bot.send_message(message.chat.id, 'Выбрать пиццу: ' + '\n' + message.text + '?', reply_markup=vbor)
 
+
 @bot.callback_query_handler(func=lambda call: True)
 def callback_inline(call):
     try:
@@ -97,6 +129,8 @@ def callback_inline(call):
             if call.data == 'da':
                 update_state(call.message, TITLE)
                 update_corzina(call.message.chat.id, 'Название', call.message.text[16:-1])
+                global title_us
+                title_us=call.message.text[16:-1]
                 bot.send_message(call.message.chat.id, 'Выберите размер:', reply_markup=sizepep)
                 update_state(call.message, SIZE)
 
@@ -109,12 +143,17 @@ def callback_inline(call):
 @bot.message_handler(func=lambda message: get_state(message) == SIZE)
 def handle_size(message):
     update_corzina(message.chat.id, 'Размер:', message.text)
+    global size_us
+    size_us = message.text
     bot.send_message(message.chat.id, text='Укажите количество в шт:')
     update_state(message, KOLVO)
 
 @bot.message_handler(func=lambda message: get_state(message) == KOLVO)
 def handle_kolvo(message):
     update_corzina(message.chat.id, 'Количество:', message.text)
+    global kolvo_us
+    kolvo_us = message.text
+    global corzina
     corzina = get_corzina(message.chat.id)
     bot.send_message(message.chat.id, text='Добавить в корзину? {}'.format(corzina) , reply_markup=yesno)
     update_state(message, CONFIRMATION)
@@ -123,10 +162,11 @@ def handle_kolvo(message):
 def handle_confirmation(message):
     if message.text == "Да! \U0001f60d":
         bot.send_message(message.chat.id , text= 'Добавлено в корзину!' , reply_markup=glmem)
+        insert_varible_into_table(user_id=us_id, title=title_us, size=size_us, kolvo=kolvo_us)
+        update_state(message, START)
 
     elif message.text == "Нет \u274e":
         bot.send_message(message.chat.id, "Вы вернулись в Главное меню!", reply_markup=menu1)
-        corzina = del_corzina(message.chat.id)
         update_state(message, START)
 
     elif message.text == 'В Главное меню \U0001f519':
