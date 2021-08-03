@@ -55,12 +55,20 @@ color: #FFFFFF;
 
 .col-lg-4{flex:0 0 auto;width:33.33333333%}.col-lg-5{flex:0 0 auto;width:41.66666667%}
 
-.btn-btn-secondary-PEP{
-margin-left:180px;
+.btn-secondary:hover{
+width: 200px;
+height: 23px;
+border-radius: 20px;
+background-color: #FF4500;
 }
 
 .photo {
-margin: 80px 10px 30px 0;
+    margin: 10px auto 20px;
+    display: block;
+}
+
+table#supertable {
+border-spacing: 100px 5px;
 }
 
 .text {
@@ -73,7 +81,7 @@ color: #FF4500;
 }
 
 .kvadrat_3 {
-margin-left:90px;
+float: right;
 width: 500px;
 height: 110px;
 background: white;
@@ -87,6 +95,7 @@ font-family: 'Sergio Trendy';
 font-weight: normal;
 font-style: normal;
 font-size: 200%;
+margin-left: auto;
 float:center;
 color: #FF4500;
 }
@@ -105,25 +114,43 @@ a:hover {
   background-color: #FF4500;
 }
 
-
-.kvadrat_knopka {
-margin-left:383px;
-width: 208px;
-height: 30px;
-background: #8B0000;
-text-align: center;
-border-radius: 20px;
-font-size: 11px;
-font-weight: normal;
-font-style: normal;
-float:center;
-font-family: 'Bahnschrift';
-}
-
 .textop{
 font-family: 'Bahnschrift';
 font-weight: normal;
 font-style: normal;
 font-size: 20px;
 color: black;
+}
+
+.shine-button {
+  font-size: 25px;
+  float: right;
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #8B0000;
+  font-family: 'Sergio Trendy';
+  color: white;
+  transition: .2s ease-in-out;
+}
+.shine-button:before {
+  content: "";
+  background: linear-gradient(90deg, rgba(255, 255, 255, .1), rgba(255, 255, 255, .5));
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  top: -8px;
+  left: -75px;
+  transform: skewX(-45deg);
+
+}
+.shine-button:hover {
+  background: #fe6637;
+  color: #fff;
+}
+.shine-button:hover:before {
+  left: 120px;
+  transition: .5s ease-in-out;
 }
