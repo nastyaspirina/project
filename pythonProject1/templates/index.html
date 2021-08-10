@@ -4,18 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Pizza House</title>
-    <link href="bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css" type="text/css"/>
-     <table>
+<!--    <link href="bootstrap.min.css" rel="stylesheet">-->
+<!--    <link rel="stylesheet" href="style.css" type="text/css"/>-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+
+</head>
+
+<body>
+<table>
     <tr>
-        <td>
-             <img class=fit-picture src="../images/166-1667810_pizza-png-free-vector-download-portable-network-graphics.png">
+        <td >
+             <img class=fit-picture src="../static/images/166-1667810_pizza-png-free-vector-download-portable-network-graphics.png">
         </td>
         <td>
      <h2><span class="your-style">PIZZA DELIVERY</span></h2>
         </td>
     </tr>
-    </table>
+</table>
 
     <ul id="navbar">
     <li><a href="index.html">PIZZAS</a></li>
@@ -23,27 +28,20 @@
      <li><a href="about.html">ABOUT US</a></li>
      <li><a href="corzina.html">BASKET</a></li>
     </ul>
-</head>
 
-<body>
-&nbsp;
-<table id="supertable">
- <div class="container marketing">
-    <div class="row">
-        <div class="col-lg-4">
+<table>
         <tr>
-
-            <td>
-                 <img class=photo src="../images/ClipartKey_2885190.png" height="400" width="400">
-                <img class=photo1 src="../images/53205b4a-4825-41b7-8c96-fa6c95b44051.png">
+            <td class="point">
+                <img src="../static/images/ClipartKey_2885190.png" alt="" class ="scale">
+                <img class=photo1 src="../static/images/53205b4a-4825-41b7-8c96-fa6c95b44051.png" alt="" >
             </td>
 
-            <td>
-             <img class=photo src="../images/pngegg.png" class="rounded-circle z-depth-0" alt="avatar image" height="400" width="400">
+            <td class="point">
+             <img src="../static/images/pngegg.png"  alt="" class ="scale">
             </td>
 
-             <td>
-              <img class=photo src="../images/kisspng-sushi-pizza-sushi-pizza-tarte-flambe-5b19f4a36e7001.5311493715284276834524.png" class="rounded-circle z-depth-0" alt="avatar image" height="400" width="400">
+             <td class="point">
+              <img src="../static/images/kisspng-sushi-pizza-sushi-pizza-tarte-flambe-5b19f4a36e7001.5311493715284276834524.png" alt="" class ="scale" >
             </td>
         </tr>
 
@@ -66,18 +64,18 @@
 
         <tr>
            <td>
-                 <h1> <a class="shine-button" href="corzina.html">Add to basket &raquo;</a></h1>
-                 <h1 class="kvadrat_textop_price">from $3.5</h1>
+                 <h6> <a class="shine-button" href="corzina.html">Add to basket &raquo;</a></h6>
+                <h6> <a class="shine-button1">from $3.5</a></h6>
             </td>
 
             <td>
-                 <h1> <a class="shine-button" href="corzina.html">Add to basket &raquo;</a></h1>
-                 <h1 class="kvadrat_textop_price">from $4.6</h1>
+                 <h6> <a class="shine-button" href="corzina.html">Add to basket &raquo;</a></h6>
+                <h6> <a class="shine-button1">from $4.6</a></h6>
             </td>
 
             <td>
-                 <h1> <a class="shine-button" href="corzina.html">Add to basket &raquo;</a></h1>
-                 <h1 class="kvadrat_textop_price">from $5.9</h1>
+                 <h6> <a class="shine-button" href="corzina.html">Add to basket &raquo;</a></h6>
+                 <h6> <a class="shine-button1">from $5.9</a></h6>
             </td>
         </tr>
 

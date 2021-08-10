@@ -10,6 +10,7 @@
 }
 
 body {
+    text-align: center;
     background:url('../images/IMG_2074.jpg');
     background-size: 100%;
 }
@@ -59,11 +60,6 @@ color: #FFFFFF;
   background-color: #FF4500;
 }
 
-.row{--bs-gutter-x:1.5rem;--bs-gutter-y:0;display:flex;flex-wrap:wrap;margin-top:calc(var(--bs-gutter-y) * -1);margin-right:calc(var(--bs-gutter-x) * -.5);margin-left:calc(var(--bs-gutter-x) * -.5)}
-
-.col-lg-4{flex:0 0 auto;width:33.33333333%}.col-lg-5{flex:0 0 auto;width:41.66666667%}
-
-.col-lg-4{flex:0 0 auto;width:33.33333333%}.col-lg-5{flex:0 0 auto;width:41.66666667%}
 
 .btn-secondary:hover{
 width: 200px;
@@ -72,26 +68,51 @@ border-radius: 20px;
 background-color: #FF4500;
 }
 
-.photo {
-    margin: 10px auto 20px;
-    position: relative;
+
+table.center {
+    margin-left: auto;
+    margin-right: auto;
+    }
+
+    .point {
+    width : 30%;
+    text-align :center;
+    color: #4682B4;
+    text-decoration:none;
+    text-tranform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 20px;
+    }
+
+    .scale  {
+            display: inline-block;
+            overflow: hidden;
+    }
+
+    .scale img {
+    transition: 0.5s;
     display: block;
-}
+    }
+
+    .scale img:hover {
+    transform: scale(1.2);
+    }
+
 
 .photo1 {
-   display: block;
    width: 4%;
    position: absolute;
 }
 
 table#supertable {
+margin-left: auto;
+margin-right: auto;
 border-spacing: 100px 5px;
 }
 
 table#supertableab {
 border-spacing: 500px 5px;
 }
-
 
 .text {
 font-family: 'Sergio Trendy';
@@ -122,23 +143,6 @@ float:center;
 color: #FF4500;
 }
 
-.kvadrat_textop_price{
-float: left;
-width: 170px;
-height: 40px;
-background: white;
-text-align: center;
-border-radius: 30px;
-
-font-family: 'Sergio Trendy';
-font-weight: normal;
-font-style: normal;
-font-size: 30px;
-margin-left: auto;
-float:center;
-color: #8b0000;
-white-space: nowrap;
-}
 
 a {
     color: #FFFFFF;
@@ -195,14 +199,47 @@ color: black;
   transition: .5s ease-in-out;
 }
 
+.shine-button1 {
+  font-size: 25px;
+  float: left;
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  background: white;
+  font-family: 'Sergio Trendy';
+  color:#8B0000;
+
+}
+
+
+/* ABOUT*/
+img {
+            width:80% ;
+            vspace: 30px ;
+            display: inline-block;
+            overflow: hidden;
+    }
 img-pizza {
 height:400px;
-width:400;
+width:400px;
+position: absolute;
 }
-/* ABOUT
-img {
-  width: 100%; !important;
-}*/
+
+table.center {
+    margin-left: auto;
+    margin-right: auto;
+    }
+    .point {
+    width : 30%;
+    text-align :center;
+    color: #4682B4;
+    text-decoration:none;
+    text-tranform: uppercase;
+    }
+
+
 
 .sim-slider {
   max-width: 1000px;
