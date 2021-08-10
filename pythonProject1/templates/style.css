@@ -1,0 +1,311 @@
+.center {
+  margin: auto;
+  width: 66%;
+}
+.fit-picture {
+    margin-left: 50px;
+    padding: 20px;
+    width: 210px;
+    height: 210px;
+}
+
+body {
+    background:url('../images/IMG_2074.jpg');
+    background-size: 100%;
+}
+
+.your-style {
+font-family: 'Sergio Trendy';
+font-weight: normal;
+font-style: normal;
+font-size: 700%;
+float:center;
+color: #FFFFFF;
+}
+
+
+.your-style-basket {
+font-family: 'Sergio Trendy';
+font-weight: normal;
+font-style: normal;
+font-size: 300%;
+float:center;
+color: #FFFFFF;
+}
+
+#navbar {
+  font-family: 'Sergio Trendy';
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  border-radius: 20px 5px;
+  width: 100%;
+  text-align: center;
+  background-color: #FF8C00;
+}
+#navbar li { display: inline; }
+
+#navbar a {
+  color: #fff;
+  padding: 8px 10px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  width: 350px;
+}
+
+#navbar a:hover {
+  border-radius: 20px 5px;
+  background-color: #FF4500;
+}
+
+.row{--bs-gutter-x:1.5rem;--bs-gutter-y:0;display:flex;flex-wrap:wrap;margin-top:calc(var(--bs-gutter-y) * -1);margin-right:calc(var(--bs-gutter-x) * -.5);margin-left:calc(var(--bs-gutter-x) * -.5)}
+
+.col-lg-4{flex:0 0 auto;width:33.33333333%}.col-lg-5{flex:0 0 auto;width:41.66666667%}
+
+.col-lg-4{flex:0 0 auto;width:33.33333333%}.col-lg-5{flex:0 0 auto;width:41.66666667%}
+
+.btn-secondary:hover{
+width: 200px;
+height: 23px;
+border-radius: 20px;
+background-color: #FF4500;
+}
+
+.photo {
+    margin: 10px auto 20px;
+    position: relative;
+    display: block;
+}
+
+.photo1 {
+   display: block;
+   width: 4%;
+   position: absolute;
+}
+
+table#supertable {
+border-spacing: 100px 5px;
+}
+
+table#supertableab {
+border-spacing: 500px 5px;
+}
+
+
+.text {
+font-family: 'Sergio Trendy';
+font-weight: normal;
+font-style: normal;
+font-size: 200%;
+float:center;
+color: #FF4500;
+}
+
+.kvadrat_pizzas {
+float: right;
+width: 500px;
+height: 110px;
+background: white;
+color:  #FF4500;
+text-align: center;
+border-radius: 30px;
+}
+
+.kvadrat_pizzas text{
+font-family: 'Sergio Trendy';
+font-weight: normal;
+font-style: normal;
+font-size: 200%;
+margin-left: auto;
+float:center;
+color: #FF4500;
+}
+
+.kvadrat_textop_price{
+float: left;
+width: 170px;
+height: 40px;
+background: white;
+text-align: center;
+border-radius: 30px;
+
+font-family: 'Sergio Trendy';
+font-weight: normal;
+font-style: normal;
+font-size: 30px;
+margin-left: auto;
+float:center;
+color: #8b0000;
+white-space: nowrap;
+}
+
+a {
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 4px 4px;
+    font-weight: bold;
+    display: inline-block;
+
+  }
+
+a:hover {
+  border-radius: 40px;
+  background-color: #FF4500;
+}
+
+.textop{
+font-family: 'Bahnschrift';
+font-weight: normal;
+font-style: normal;
+font-size: 20px;
+color: black;
+}
+
+.shine-button {
+  font-size: 25px;
+  float: right;
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #8B0000;
+  font-family: 'Sergio Trendy';
+  color: white;
+  transition: .2s ease-in-out;
+}
+.shine-button:before {
+  content: "";
+  background: linear-gradient(90deg, rgba(255, 255, 255, .1), rgba(255, 255, 255, .5));
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  top: -8px;
+  left: -75px;
+  transform: skewX(-45deg);
+
+}
+.shine-button:hover {
+  background: #fe6637;
+  color: #fff;
+}
+.shine-button:hover:before {
+  left: 120px;
+  transition: .5s ease-in-out;
+}
+
+/* ABOUT */
+img {
+  width: 100%; !important;
+}
+
+.sim-slider {
+  max-width: 1000px;
+  min-width: 320px;
+  margin: 20px auto;
+  padding: 30px 50px;
+  border: 1px solid #ccd;
+  background-color: white;
+}
+
+/* General styles */
+.sim-slider {
+  position: relative;
+}
+
+.sim-slider-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  position: relative;
+}
+
+.sim-slider-element {
+  transition: opacity 1s ease-in;
+  opacity: 0;
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  display: block;
+}
+
+/* Navigation item styles */
+div.sim-slider-arrow-left,
+div.sim-slider-arrow-right {
+  width: 22px;
+  height: 40px;
+  position: absolute;
+  cursor: pointer;
+  opacity: 0.6;
+  z-index: 4;
+}
+
+div.sim-slider-arrow-left {
+  left: 10px;
+  top: 40%;
+  display: block;
+  background: url("http://pvbk.spb.ru/inc/slider/sim-files/sim-arrow-left.png") no-repeat;
+}
+
+div.sim-slider-arrow-right {
+  right: 10px;
+  top: 40%;
+  display: block;
+  background: url("http://pvbk.spb.ru/inc/slider/sim-files/sim-arrow-right.png") no-repeat;
+}
+
+div.sim-slider-arrow-left:hover {
+  opacity: 1.0;
+}
+
+div.sim-slider-arrow-right:hover {
+  opacity: 1.0;
+}
+
+div.sim-slider-dots {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 3;
+  text-align: center;
+}
+
+span.sim-dot {
+  width: 10px;
+  height: 10px;
+  margin: 5px 7px;
+  padding: 0;
+  display: inline-block;
+  background-color: #BBB;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.kvadrat_about {
+ width: 1100px;
+ height: 630px;
+ position: absolute;
+ top: 110%;
+ left: 27.5%;
+ margin: -125px 0 0 -125px;
+ background: white;
+ text-align: center;
+ border-radius: 30px;
+}
+
+.kvadrat_contacts {
+ width: 1000px;
+ height: 560px;
+ position: absolute;
+ top: 50%;
+ left: 30%;
+ margin: -125px 0 0 -125px;
+ background: white;
+ text-align: center;
+ border-radius: 30px;
+}
+
